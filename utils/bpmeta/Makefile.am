@@ -3,7 +3,7 @@ AM_CPPFLAGS += -I$(top_builddir)/src  -I$(top_builddir)/src/public  -I$(top_srcd
 
 AUTOMAKE_OPTIONS = no-dependencies
 
-bin_PROGRAMS = bpmeta
+bin_PROGRAMS = bpmeta bpmetaserver
 
 bpmeta_SOURCES = bpmeta.c
 bpmeta_CPPFLAGS = $(AM_CPPFLAGS) $(ADIOSLIB_EXTRA_CPPFLAGS) $(ADIOSLIB_INT_CPPFLAGS) $(ADIOSLIB_INT_CFLAGS)
@@ -11,3 +11,8 @@ bpmeta_LDFLAGS = $(ADIOSLIB_INT_LDFLAGS)
 bpmeta_LDADD = $(top_builddir)/src/libadios_internal_nompi.a
 bpmeta_LDADD += $(ADIOSLIB_INT_LDADD)
 
+bpmetaserver_SOURCES = bpmetaserver.c
+bpmetaserver_CPPFLAGS = $(AM_CPPsFLAGS) $(ADIOSLIB_EXTRA_CPPFLAGS) $(ADIOSLIB_INT_CPPFLAGS) $(ADIOSLIB_INT_CFLAGS)
+bpmetasever_LDFLAGS = $(ADIOSLIB_INT_LDFLAGS)
+bpmetaserver_LDADD = $(top_builddir)/src/libadios_internal_nompi.a
+bpmetaserver_LDADD += $(ADIOSLIB_INT_LDADD)

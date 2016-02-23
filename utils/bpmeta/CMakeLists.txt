@@ -10,3 +10,9 @@ target_link_libraries(bpmeta adios_internal_nompi ${ADIOSLIB_INT_LDADD})
 set_target_properties(bpmeta PROPERTIES COMPILE_FLAGS "${ADIOSLIB_EXTRA_CPPFLAGS} ${ADIOSLIB_INT_CPPFLAGS} ${ADIOSLIB_INT_CFLAGS}")
 
 install(PROGRAMS ${CMAKE_BINARY_DIR}/utils/bpmeta/bpmeta DESTINATION ${bindir})
+
+add_executable(bpmetaserver bpmetaserver.c)
+target_link_libraries(bpmetaserver adios_internal_nompi ${ADIOSLIB_INT_LDADD})
+set_target_properties(bpmetaserver PROPERTIES COMPILE_FLAGS "${ADIOSLIB_EXTRA_CPPFLAGS} ${ADIOSLIB_INT_CPPFLAGS} ${ADIOSLIB_INT_CFLAGS}")
+
+install(PROGRAMS ${CMAKE_BINARY_DIR}/utils/bpmeta/bpmetaserver DESTINATION ${bindir})
